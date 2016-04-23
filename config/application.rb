@@ -22,5 +22,17 @@ module ModernJsRailsExample
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # here you can configure the command run by browserify
+    # you can add other babel plugins by installing them and including them in the array with es2015
+    config.browserify_rails.commandline_options = '-t [ babelify --presets [ es2015 ] ]'
+    # this will turn on sourcemaps for development RAILS_ENV
+    config.browserify_rails.source_map_environments << 'development'
+    # this tells browserify what paths/files it needs to be concerned with
+    # we will just use node_modules and the browserify folder we just created
+    config.browserify_rails.paths = [
+      lambda { |p| p.start_with?(Rails.root.join('node_modules').to_s) },
+      lambda { |p| p.start_with?(Rails.root.join('app/assets/javascripts/browserify').to_s) },
+    ]
   end
 end
