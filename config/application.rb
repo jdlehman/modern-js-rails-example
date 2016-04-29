@@ -25,7 +25,7 @@ module ModernJsRailsExample
 
     # here you can configure the command run by browserify
     # you can add other babel plugins by installing them and including them in the array with es2015
-    config.browserify_rails.commandline_options = '-t [ babelify --presets [ es2015 ] ]'
+    config.browserify_rails.commandline_options = '-t [ babelify --presets [ es2015 react ] ]'
     # this will turn on sourcemaps for development RAILS_ENV
     config.browserify_rails.source_map_environments << 'development'
     # this tells browserify what paths/files it needs to be concerned with

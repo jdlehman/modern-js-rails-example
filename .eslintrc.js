@@ -2,7 +2,8 @@ module.exports = {
   'extends': [
     'customink',
     'customink/browser',
-    'customink/mocha'
+    'customink/mocha',
+    'customink/react'
   ],
 
   "rules": {
