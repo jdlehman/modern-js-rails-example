@@ -7,6 +7,10 @@
   "directories": {
     "test": "test"
   },
+  "engines": {
+    "node": "5.10.x",
+    "npm": "3.8.x"
+  },
   "scripts": {
     "lint:src": "$(npm bin)/eslint ./app/assets/javascripts/browserify",
     "lint:test": "$(npm bin)/eslint ./spec/javascripts",
